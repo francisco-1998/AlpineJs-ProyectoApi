@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Rick and Morty App</title>
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+</head>
+<body>
+    <div x-data="alpineInstance()" x-init="fetch(url).then(response => response.json()).then(data => personajes = data.results)">
+
+<!-- begin: p card -->
+<template x-for="p in personajes" :key="p.id">
+    <div>
+        <img x-bind:src = "p.image" height="100px">
+        <p x-text="p.name"></p>
+    </div>
+</template>
+<!-- end: p card -->
+</div>
+</div>
+
+
+  <script src="index.js"></script>
+</body>
+</html>
